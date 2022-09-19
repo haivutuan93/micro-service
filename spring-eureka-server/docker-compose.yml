@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  spring_eureka_server:
+    image: spring-eureka-server
+    container_name: spring_eureka_server
+    ports:
+      - 8761:8761
+    networks:
+      - huongdanjava
+    extra_hosts:
+      - "docker.for.mac.localhost:host-gateway"
+
+networks:
+  huongdanjava:
+    driver: bridge
