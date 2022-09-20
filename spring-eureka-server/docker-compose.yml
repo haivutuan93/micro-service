@@ -9,7 +9,7 @@ services:
     networks:
       - huongdanjava
     extra_hosts:
-      - "docker.for.mac.localhost:host-gateway"
+      - "host.docker.internal:host-gateway"
 
 networks:
   huongdanjava:
