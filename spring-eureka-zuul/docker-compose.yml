@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  spring_zuul_server:
+    image: spring-zuul-server
+    container_name: spring_zuul_server
+    ports:
+      - 8762:8762
+    networks:
+      - icommercenetwork
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+networks:
+  icommercenetwork:
+    driver: bridge
