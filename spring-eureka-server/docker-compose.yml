@@ -7,10 +7,10 @@ services:
     ports:
       - 8761:8761
     networks:
-      - huongdanjava
+      - icommercenetwork
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
 networks:
-  huongdanjava:
+  icommercenetwork:
     driver: bridge
