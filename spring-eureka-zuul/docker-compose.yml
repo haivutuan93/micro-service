@@ -1,15 +1,15 @@
-version: '3.3'
+version: '3.8'
 
 services:
-  spring_zuul_server:
-    image: spring-zuul-server
-    container_name: spring_zuul_server
-    ports:
-      - 8762:8762
+  zuul:
+    image: zuul:2
+    container_name: zuul
+    environment:
+      - eureka.client.serviceUrl.defaultZone = http://host.docker.internal:8761/eureka/
     networks:
       - icommercenetwork
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+    ports:
+      - 8762:8762
 
 networks:
   icommercenetwork:

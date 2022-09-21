@@ -1,9 +1,9 @@
 version: '3.3'
 
 services:
-  spring_eureka_server:
-    image: spring-eureka-server
-    container_name: spring_eureka_server
+  eureka:
+    image: eureka:3
+    container_name: eureka
     ports:
       - 8761:8761
     networks:

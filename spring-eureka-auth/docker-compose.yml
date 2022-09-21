@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  auth:
+    image: auth:1
+    container_name: auth
+    environment:
+      - eureka.client.serviceUrl.defaultZone = http://host.docker.internal:8761/eureka/
+    ports:
+      - 9100:9100
+    networks:
+      - icommercenetwork
+
+networks:
+  icommercenetwork:
+    driver: bridge
