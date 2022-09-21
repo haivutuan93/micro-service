@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   eureka:
-    image: eureka:3
+    image: eureka:latest
     container_name: eureka
     ports:
       - 8761:8761

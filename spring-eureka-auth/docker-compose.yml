@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   auth:
-    image: auth:1
+    image: auth:latest
     container_name: auth
     environment:
       - eureka.client.serviceUrl.defaultZone = http://host.docker.internal:8761/eureka/
