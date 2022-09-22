@@ -32,9 +32,8 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
 	        .and()
 		    .addFilter(new JwtUsernameAndPasswordAuthenticationFilter(authenticationManager(), jwtConfig))
 		.authorizeRequests()
-		    .antMatchers(HttpMethod.POST, jwtConfig.getUri()).permitAll()
-//		    .antMatchers(HttpMethod.POST, "/auth/register").permitAll()
-		    .anyRequest().authenticated();
+		    .antMatchers(HttpMethod.POST, "/icommerce/**").authenticated()
+		    .anyRequest().permitAll();
 	}
 	
 	@Override
