@@ -1,5 +1,6 @@
 package com.eureka.zuul.security;
 
+import com.netflix.zuul.context.RequestContext;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -49,6 +50,7 @@ public class JwtTokenAuthenticationFilter extends  OncePerRequestFilter {
 				 UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
 								 username, null, authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
 				 SecurityContextHolder.getContext().setAuthentication(auth);
+				 RequestContext.getCurrentContext().addZuulRequestHeader("username", username);
 			}
 			
 		} catch (Exception e) {
